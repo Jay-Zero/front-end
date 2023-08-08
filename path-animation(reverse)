@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    margin: 0; /* Remove default margin */
+    overflow: hidden; /* Hide scrollbars */
+  }
+  
+  svg {
+    width: 100vw;
+    height: 100vh;
+    border: 1px solid #ccc;
+  }
+  
+  .path {
+    fill: none;
+    stroke: black;
+    stroke-width: 1;
+  }
+  
+  .moving-circle {
+    fill: black;
+  }
+</style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <path id="path-rect" class="path" d="M900,50 L-900,50 L-90,900 L900,90 Z" />
+    <circle class="moving-circle" r="2.5">
+      <animateMotion repeatCount="indefinite" dur="5s">
+        <mpath href="#path-rect" />
+      </animateMotion>
+    </circle>
+  </svg>
+</body>
+</html>
